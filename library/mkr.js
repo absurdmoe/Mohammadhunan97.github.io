@@ -1,4 +1,4 @@
-console.log('mkr js is avail');
+console.log('test test test');
 let me = this; // easy to edit window object
 let doc = document;
 
