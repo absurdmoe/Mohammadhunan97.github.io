@@ -1,0 +1,11 @@
+let player;
+let player2;
+let move;
+let player_one_horizontal_position;
+let player_one_vertical_position;
+let player_two_horizontal_position;
+let player_two_vertical_position;
+let hero1;
+let hero2;
+let punchable = false;
+let throwable = false;

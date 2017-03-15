@@ -7,10 +7,12 @@
 */
 #player2{
 	background-image: url('images/player2.png');
-	position: absolute;
+	position: relative;
 	z-index: 1;
 	height: 142px;	
 	right: 100px;
+	left: 500px;
+	top:-140px;
 }
 /*first: w(8) bp(99);
   second:w(8) bp(78);   third:w(10) bp(53);

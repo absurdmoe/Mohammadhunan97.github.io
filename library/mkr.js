@@ -30,7 +30,7 @@ function getRand(max,min,except){   //inclusive inclusive
   }else{    //works in all cases even if except is undefined
       return randNum;
   }
-}; //self invoked so this doesn't get intered with
+}; 
 function Sort(array){
   let topnum = array.length -1; 
   let random;
@@ -46,3 +46,4 @@ function Sort(array){
     }
   }
 };
+

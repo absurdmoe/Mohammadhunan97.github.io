@@ -1,9 +1,11 @@
 body{
+
 	overflow: hidden;
 }
 #wrapper{
 	margin: 0 5% 0 5%;
-	background: lightskyblue;
+	background-image: url('images/background.jpg');
+	background-repeat: no-repeat;
 	width: 90%;
 	height: 1000px;
 }

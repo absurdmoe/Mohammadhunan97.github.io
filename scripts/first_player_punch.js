@@ -1,4 +1,4 @@
-function punch(){		
+function first_player_punch(){		
 			setTimeout(function(){
 				console.log('200 ms passed')
 				player.className = ' stance_two';
