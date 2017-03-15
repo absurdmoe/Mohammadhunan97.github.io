@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    #test{
+        background-repeat: no-repeat;
+        height: 640px;
+        /*0 40 58*/
+        position: relative;
+        left: 400px;
+        top: 400px;
+    }
+    .image{
+        background-image: url('images/sidestepken.png');
+        width:9%;
+    }
+    .kick{
+        background-image: url('images/jumppunch.gif');
+        width: 100%;
+    }
+    .first{
+        background-image: url('images/sidestepken.png');
+        width:7.8%;
+        background-position:0% 0%;
+    }
+    .second{
+        background-image: url('images/sidestepken.png');
+        background-position:40% 0%;
+        width:7.8%;
+    }
+    .third{
+        background-image: url('images/sidestepken.png');
+        background-position:58% 0%;
+        width:7%;
+    }
+
+    </style>
+</head>
+<body>
+    <div id="test"></div>
+<script>
+document.getElementById('test').className = 'image';
+let lefter = 400; 
+let uper = 400;
+window.addEventListener('keydown',function(e){
+    if(e.code === 'KeyX'){
+        console.log('test');
+        document.getElementById('test').className = 'kick' || 'kick';
+        setTimeout(function(){
+            document.getElementById('test').className = 'image';
+        },2000);
+
+    }
+    if(e.code === 'ArrowLeft'){
+        lefter -= 10;
+        changepos();
+    }
+    if(e.code === 'ArrowRight'){
+        lefter += 10;
+        changepos();
+    }
+})
+let counter = 0;
+function changepos(){
+    counter++;
+    document.getElementById('test').style.top = uper + 'px';
+    document.getElementById('test').style.left = lefter + 'px';
+    if(counter === 1){
+        console.log('first');
+     document.getElementById('test').className = 'first';
+    }
+    if(counter === 2){ 
+        console.log('second');
+     document.getElementById('test').className = 'second';
+    }   
+    if(counter === 3){
+        console.log('third');
+     document.getElementById('test').className = 'third';
+     counter = 0;
+    }
+}
+
+</script>
+</body>
+</html>

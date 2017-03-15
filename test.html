@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	#test{
+		background-image: url('images/sidestepken.png');
+		background-repeat: no-repeat;
+		height: 640px;
+		width:9%;
+		/*0 40 58*/
+		
+		position: relative;
+		left: 0px;
+		top: 0px;
+	}
+	.first{
+		background-position:0% 0%;
+	}
+	.second{
+		background-position:40% 0%;
+	}
+	.third{
+		background-position:58% 0%;
+	}
+
+	</style>
+</head>
+<body>
+	<div id="test"></div>
+
+<script type="text/javascript">
+let lefter = 0; 
+let uper = 0;
+window.addEventListener('keydown',function(e){
+	if(e.code === 'ArrowLeft'){
+		lefter -= 10;
+		changepos();
+	}
+	if(e.code === 'ArrowRight'){
+		lefter += 10;
+		changepos();
+	}
+})
+let counter = 0;
+function changepos(){
+	counter++;
+	document.getElementById('test').style.top = uper + 'px';
+	document.getElementById('test').style.left = lefter + 'px';
+	if(counter === 1){
+		console.log('first');
+	 document.getElementById('test').className = 'first';
+	}
+	if(counter === 2){ 
+		console.log('second');
+	 document.getElementById('test').className = 'second';
+	}	
+	if(counter === 3){
+		console.log('third');
+	 document.getElementById('test').className = 'third';
+	 counter = 0;
+	}
+}
+
+
+</script>
+</body>
+</html>
