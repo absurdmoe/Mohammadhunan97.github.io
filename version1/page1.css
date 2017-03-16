@@ -1,0 +1,40 @@
+body{
+	overflow: hidden;
+}
+#hero1{
+	position: absolute;
+	background-image: url('assets/ryu_bounce/ryu_bounce_sheet.png');
+	background-size: 600px 300px;
+	background-repeat: no-repeat;
+	width: 122px;
+	height: 300px;
+	display: inline-block;
+}
+.first_stance{
+	background-position: 0% 0%;
+}
+.second_stance{
+	background-position: 25% 0%;
+}
+.third_stance{
+	background-position: 50% 0%;
+}
+.fourth_stance{
+	background-position: 75% 0%;
+}
+.fifth_stance{
+	background-position: 100% 0%;
+}
+.ryu_punch{
+	background-position: 0% 0%;
+	background-image: url('assets/ryu_punch/ryu_punch_sheet.png')!important;
+}
+#img{
+	
+	position: absolute;
+	background-image: url('assets/ryupunch.png');
+	background-position: 0% 0%;
+	back
+	width: 58px;
+	height: 200px;
+}

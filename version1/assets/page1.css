@@ -1,0 +1,9 @@
+body{
+	overflow: hidden;
+}
+#hero1{
+	background-image: url('assets/ryu_bounce_ryu_bounce_sheet.png');
+	width: 100px;
+	background-color: blue;
+	height: 100px;
+}
