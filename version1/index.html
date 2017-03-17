@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	div{
+	background-repeat: no-repeat;
+	height: 250px;
+	width: 200px; 
+	display: inline-block;
+	position: absolute;
+	}
+	.second{
+		background-position: 0% 0%;
+		background-size: 300%;
+		top: 450px; /*on ground*/
+		background-image: url('tempassets/kenbreather.png');
+	}
+	.third{
+		background-position: 55% 0%;
+		background-size: 300%;
+		top: 450px; /*on ground*/
+		background-image: url('tempassets/kenbreather.png');
+	}
+	.fourth{
+		background-position: 114% 0%;
+		background-size: 300%;
+		top: 450px; /*on ground*/
+		background-image: url('tempassets/kenbreather.png');
+	}
+
+
+	</style>
+</head>
+<body>
+	<div class="second"></div>
+
+	<script>
+	let player = document.getElementsByTagName('div')[0];
+
+	setInterval(function(){
+		setTimeout(function(){
+			player.className = 'third';
+			setTimeout(function(){
+				player.className = 'fourth';
+				setTimeout(function(){
+					player.className = 'second';
+				},300);
+			},300);
+		},300);
+	},900);
+
+
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	div{
+	background-repeat: no-repeat;
+	height: 250px;
+	width: 200px; 
+	display: inline-block;
+	position: absolute;
+	}.first{
+		background-position: 0% 10%;
+		background-size: 100%;
+		top: 400px; /*on ground*/
+		background-image: url('tempassets/kenjump.png');
+	}
+	.second{
+		background-size: 700%;
+		top: 450px;
+		background-image: url('tempassets/kenpunch.png');
+	}
+	.third{
+		background-size: 625%;
+		top: 470px;
+		background-image: url('tempassets/kenpunch.png');
+		background-position: 25% 0%;
+	}
+	.fourth{
+		background-size: 625%;
+		top: 470px;
+		background-image: url('tempassets/kenpunch.png');
+		background-position: 50% 0%;
+	}
+	.fifth{
+		background-size: 625%;
+		top: 470px;
+		background-image: url('tempassets/kenpunch.png');
+		background-position: 75% 0%;
+	}
+	.sixth{
+		background-size: 625%;
+		top: 470px;
+		background-image: url('tempassets/kenpunch.png');
+		background-position: 100% 0%;
+	}
+
+	</style>
+</head>
+<body>
+	<div class="fifth"></div>
+
+	<script>
+	let player = document.getElementsByTagName('div')[0];
+
+	window.addEventListener('click', function(){
+		player.className = 'sixth';
+	}
+		);
+
+
+
+
+	
+	</script>
+</body>
+</html>

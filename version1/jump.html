@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	div{
+	background-repeat: no-repeat;
+	height: 250px;
+	width: 200px; 
+	display: inline-block;
+	position: absolute;
+	background-image: url('tempassets/kenjump.png');
+
+	}
+	.first{
+		background-position: 0% 10%;
+		background-size: 100%;
+		top: 400px; /*on ground*/
+	}
+	.second{
+		background-position: 0% 24%;
+		background-size: 95%;
+		top: 300px; /*near ground*/
+	}
+	.third{
+		background-position: 0% 73%;
+		background-size: 82%;
+		top: 100px;
+	}
+	.fourth{
+		background-position: 0% 91%;
+		background-size: 100%;
+		top:250px;
+	}
+	.fifth{ 
+		background-position: 0% 57%;
+		background-size: 100%;
+		top:400px;
+	}
+	</style>
+</head>
+<body>
+	<div class="fifth"></div>
+
+	<script>
+	let player = document.getElementsByTagName('div')[0];
+	window.addEventListener('click',function(){
+		jump();
+	});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	function jump(){
+		setTimeout(function(){
+			player.className = 'first';
+					setTimeout(function(){
+						player.className = 'second';
+						setTimeout(function(){
+							player.className = 'third';
+							setTimeout(function(){
+								player.className = 'fourth';
+								setTimeout(function(){
+									player.className = 'fifth';
+									setTimeout(function(){
+										player.className = 'first';
+									},300);
+								},400);
+							},500);
+						},300);
+					},200);
+		},100);
+	}
+	</script>
+</body>
+</html>

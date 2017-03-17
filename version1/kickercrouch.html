@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	div{
+	background-repeat: no-repeat;
+	height: 250px;
+	width: 200px; 
+	display: inline-block;
+	position: absolute;
+	}
+	.first{
+		background-position: 0% 10%;
+		background-size: 100%;
+		top: 400px; /*on ground*/
+		background-image: url('tempassets/kenjump.png');
+	}
+	.fifth{ 
+		background-position: 0% 57%;
+		background-size: 80%;
+		top:470px;
+		height: 200px;
+		background-image: url('tempassets/kenjump.png');
+	}
+	.seventh{
+		background-image: url('tempassets/kenkick.png');
+		top: 410px;
+		background-size: 450% 100%;
+		background-position: 20% 0%;
+		left: 50px;
+	}
+	.eighth{
+		background-image: url('tempassets/kenkick.png');
+		top: 410px;
+		background-size: 450% 100%;
+		background-position: 50% 0%;
+		left: 80px;
+	}
+	.ninth{
+		background-image: url('tempassets/kenkick.png');
+		top: 410px;
+		background-size: 450% 100%;
+		background-position: 78% 0%;
+		left: 30px;
+	}
+	.tenth{
+		background-image: url('tempassets/kenkick.png');
+		top: 410px;
+		background-size: 450% 100%;
+		background-position: 103% 0%;
+		left: 10px;
+	}
+
+	</style>
+</head>
+<body>
+	<div class="first"></div>
+
+	<script>
+	let keydowns = {};
+	keydowns['crouch'] = false;
+	keydowns['crouch_kick'] = false;
+	let player = document.getElementsByTagName('div')[0];
+	let enabled = true;
+	setInterval(function(){
+		enabled = true;
+	},4000);
+
+	window.addEventListener('keydown', function(e){
+		if(e.code === 'ArrowDown'){
+			keydowns['crouch'] = true;
+			player.className = 'fifth';
+		}
+		 if(enabled === true){
+
+			if(e.code === 'KeyX'){
+				keydowns['crouch_kick'] = true;
+				enabled = false;
+				kick(); /*give more power for button held down*/
+
+			}
+		}
+	});
+	window.addEventListener('keyup',function(e){
+		keydowns['crouch'] = false;
+		keydowns['crouch_kick'] = false;
+		player.className = 'first';
+
+	});
+
+function kick(){
+	kicked_is_running = true;
+	if(keydowns['crouch'] === true && keydowns['crouch_kick'] === true){
+		
+				setTimeout(function(){
+					player.className = 'seventh';
+					setTimeout(function(){
+						player.className = 'eighth';
+						setTimeout(function(){
+							player.className = 'ninth';
+							setTimeout(function(){
+								player.className = 'tenth';
+								setTimeout(function(){
+										player.className = 'fifth';
+										enabled = true;
+								},200);
+							},200);
+						},200);
+					},200);
+				},200);
+	}
+}
+
+
+
+	</script>
+</body>
+</html>
