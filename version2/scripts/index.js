@@ -1,51 +1,25 @@
 console.log('index.js is available');
-let id;
-let health, stamina;
-let healthpoints = 97;
-let staminapoints = 400;
-
-
 window.onload = function(){
-	health = doc.getByTag('h1',0);
-	health.innerText = 'HEALTH: ' + healthpoints;
-	stamina = doc.getByTag('h2',0);
-	stamina.innerText = 'STAMINA: ' + staminapoints;
-
-
-
-
-	ken = new Hero('ken','ken',500,550,122,300);
-	ken.move(ken,'ArrowLeft','ArrowUp','ArrowRight','ArrowDown','KeyX');	/*don't remove
-	or it doesn't move*/
+	evilKen = new Hero('evilKen',1400,550,1);
+	ken = new Hero('ken',500,550,0);
+	ken.move(ken,'ArrowLeft','ArrowUp','ArrowRight','ArrowDown','KeyX');
 	ken.attack(ken,'KeyX','KeyC','KeyV','KeyB','KeyZ');
-	ken.me.className = 'ken_breather_main';
-	ken_breath();
+	evilKen.me.style.transform = 'scaleX('+ (-1) + ')';
 
-	setInterval(function(){
-		ken_breath();
-		if(ken.y !== 550){
-			console.log('position fixed');
-			ken.y = 550;
-			ken.me.className = 'ken_breather_main';
-			move_vertical(ken);
-		}
-	},1500);
+	ken_breath(ken);
+	ken_breath(evilKen);
 
+	check_stamina(ken);
+	check_stamina(evilKen);
+
+	 setInterval(function(){
+	 	if(ken.y !== 550){
+	 		ken_breath(ken);
+	 		ken_breath(evilKen);
+	 		console.log('position fixed');
+	 		ken.y = 550;
+	 		ken.me.className = 'ken_breather_main';
+	 		move_vertical(ken);
+	 	}
+	 },1500);
 } //end of window.onload
-
-function ken_breath(){
-	ken.me.className = 'ken_breather_main';
-	setTimeout(function(){
-		ken.me.className += ' ken_breather_first';
-		setTimeout(function(){
-			ken.me.className += ' ken_breather_second';
-		},333);
-	},333);
-	if(healthpoints < 100){
-		healthpoints++;
-	}
-}
-
-setInterval(function(){
-	health.innerText = 'HEALTH: ' + healthpoints;
-},300);

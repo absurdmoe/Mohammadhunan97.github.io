@@ -5,9 +5,24 @@ body{
 }
 h1,h2{
 	color:white;
-	z-index: 2;
+}
+.enemyhealth{
+	position: absolute;
+	top: 1px;
+	right: 40px;
+}
+.enemystamina{
+	position: absolute;
+	top: 60px;
+	right: 40px;
 }
 #ken{
+	height: 400px;
+	position: absolute;
+	background-repeat: no-repeat;
+	overflow: visible;
+}
+#evilKen{
 	height: 400px;
 	position: absolute;
 	background-repeat: no-repeat;
@@ -112,8 +127,16 @@ h1,h2{
 	background-size: 500% 130%;
 	background-position: 16% 0%;
 }
+/*
 .ken_hadoken_second{
 	width: 2050px;
 	background-size: 220% 140%;
 	background-position: 96% 0%;
+}
+*/
+.ken_hadoken_second{
+	background-image: url('assets/tes.png');
+	width: 1700px;
+	background-size: 85% 130%;
+	background-position: 100% 0%;
 }
