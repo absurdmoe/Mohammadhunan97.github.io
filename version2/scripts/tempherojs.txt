@@ -1,0 +1,72 @@
+HERO JS:
+
+console.log('hero.js is available');
+function Hero(id,me,x,y,w,h,left,up,right,down,attk1,attk2,attk3){
+	this.id = id; //refers to the id used to create sprite based on main menu selection
+	doc.body.innerHTML = "<div id='" + this.id + "'></div>";
+
+	this.me = doc.getByID(me); //me refers to the dom elements id
+	this.x = x || 0;
+	this.y = y || 0;
+	this.w = w || 100;
+	this.h = h || 100;
+	this.me.style.top = y + 'px';
+	this.me.style.left = x + 'px';
+	/* CLOSURE, and Objects on steroids */
+	this.move = function(hero_object,a,b,c,d){ /*keys you want to move*/
+		window.addEventListener('keydown',function(e){
+			console.log('test');
+			move_characters(hero_object,e.code,a,b,c,d);
+		});
+	}
+	this.attack = function(attk1,attk2,attk3){
+		window.addEventListener('keydown',function(e){
+		//	attack_characters(hero_object,e.code,attk1,attk2,attk3);
+		});
+	}
+}
+
+function move_characters(hero_object,e,a,b,c,d){
+	if(e === a){
+		hero_object.x -=10;
+		move_horizontal(hero_object);
+	}
+	if(e === c){
+		hero_object.x +=10;
+		move_horizontal(hero_object);
+	}
+	if(e === b){
+		jump(hero_object);
+	}
+}
+function move_horizontal(hero_object){
+	hero_object.me.style.left = hero_object.x + 'px';
+}
+function move_vertical(hero_object){
+	hero_object.me.style.top = hero_object.y + 'px';
+}
+
+function jump(hero_object){
+	console.log(hero_object.id + ' jumped!!!');
+	hero_object.me.className = 'ken_jump_main';
+	hero_object.y -=300;
+	move_vertical(hero_object);
+	setTimeout(function(){
+		hero_object.y -=150;
+		move_vertical(hero_object);
+		hero_object.me.className += ' ken_jump_first';
+		setTimeout(function(){
+			hero_object.y +=150;
+			move_vertical(hero_object);
+			hero_object.me.className += ' ken_jump_second';
+			setTimeout(function(){
+				hero_object.y +=300;
+				move_vertical(hero_object);
+				hero_object.me.className = 'ken_jump_main';
+			},200)
+		},200)
+	},200);
+}
+
+
+

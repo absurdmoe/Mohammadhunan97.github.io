@@ -1,0 +1,26 @@
+INDEX JS:
+console.log('index.js is available');
+let id;
+window.onload = function(){
+	//id = prompt('which character would you like to choose');
+
+	ken = new Hero('ken','ken',500,550,122,300,'ArrowLeft','ArrowUp','ArrowRight','ArrowDown');
+	ken.me.className = 'ken_jump_main';
+/*	ken_breath(); //needs to be called once before setInterval so no load time
+
+
+	setInterval(function(){
+		ken_breath();
+	},1000);	
+
+}
+function ken_breath(){
+	ken.me.className = 'ken_breather_main';
+	setTimeout(function(){
+		ken.me.className += ' ken_breather_first';
+		setTimeout(function(){
+			ken.me.className += ' ken_breather_second';
+		},333);
+	},333);
+*/
+}
