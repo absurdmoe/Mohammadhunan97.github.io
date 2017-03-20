@@ -24,10 +24,7 @@ function crouch(hero_object){
 	hero_object.me.className = 'ken_crouch_main'; /*ypos 710*/
 	window.addEventListener('keyup',function(e){
 		if(e.code === 'ArrowDown'){
-	//		hero_object.y = 550;
 			move_vertical(hero_object);
-		//	hero_object.me.className = 'ken_breather_main';
-	//		enabled = true;
 		}
 	});
 }
@@ -40,7 +37,7 @@ function move_vertical(hero_object){
 }
 
 function jump(hero_object){
-	console.log(hero_object.id + ' jumped!!!');
+	hadoken_enabled = false;
 	hero_object.me.className = 'ken_jump_main';
 	hero_object.y -=300;
 	move_vertical(hero_object);
@@ -52,6 +49,7 @@ function jump(hero_object){
 			hero_object.me.className += ' ken_jump_second';
 			setTimeout(function(){
 				setTimeout(function(){
+					hadoken_enabled = true;
 				},300);
 			},300)
 		},300)

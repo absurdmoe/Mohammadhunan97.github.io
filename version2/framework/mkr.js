@@ -17,7 +17,6 @@ doc.getByTag = function(element,n){
 doc.getByClass = function(element,n){
 	return doc.getElementsByClassName(element)[n];
 }
-
 function getRand(max,min,except){   //inclusive inclusive 
   min = Math.round(min) || 0;
   max = Math.round(max)+1 || 100;
@@ -47,3 +46,13 @@ function Sort(array){
   }
 };
 
+//for this app this is used to return the object that is not currently being called upon
+function returnOthers(arr,index){
+let temp = [];
+for(a = 0; a < arr.length; a++){
+  if(a !== index){
+    temp.push(a);
+  }
+}
+return temp;
+}

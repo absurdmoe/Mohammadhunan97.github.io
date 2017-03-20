@@ -30,15 +30,17 @@ h1,h2{
 }
 .ken_breather_main{
 	width:300px;
-	background-image: url('assets/breatherfinal.png');
-	background-size: 400% 100%;
+	background-image: url('assets/testbreather.png');
+	background-size: 308% 100%;
 	background-position: 0% 0%;
 }
 .ken_breather_first{
-	background-position: 50% 0%;
+	background-position: 48% 0%;
 }
 .ken_breather_second{
+	background-image: url('assets/breatherfinal.png');
 	background-position: 101% 0%;
+	background-size: 408% 100%;
 }
 .ken_jump_main{
 	width:300px;
@@ -127,16 +129,17 @@ h1,h2{
 	background-size: 500% 130%;
 	background-position: 16% 0%;
 }
-/*
-.ken_hadoken_second{
-	width: 2050px;
-	background-size: 220% 140%;
-	background-position: 96% 0%;
-}
-*/
 .ken_hadoken_second{
 	background-image: url('assets/tes.png');
 	width: 1700px;
 	background-size: 85% 130%;
 	background-position: 100% 0%;
+}
+.topdog{
+	z-index: 4;
+}
+.dmg{
+	font-family: font-family: 'Alfa Slab One', cursive;
+	color: gold;
+	font-size: 4em;
 }
